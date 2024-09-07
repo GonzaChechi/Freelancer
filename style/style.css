@@ -1,13 +1,50 @@
+:root{
+    /*Paleta de colores*/
+    --blanco: #ffffff;
+    --negro: #000000;
+    --primario: #ffc107;
+    --secundario: #0097a7;
+    --gris: #757575;
+
+    /*custom properties*/
+    --fuente-principal: 3.8rem;
+}
+
 html{
     font-size: 62.5%;
 }
 body{
     font-size: 16px; /*1 rem = 10*/
+    font-family: "Roboto", sans-serif;
 }
 .titulo{
     text-align: center;
-    font-size: 3.8rem; /* son 38 pixeles*/
+    font-size: var(--fuente-principal); /* son 38 pixeles*/
+    
 }
 .titulo span{
     font-size: 2rem; /* son 20 pixeles*/
+}
+.contenedor{
+    width: 120rem;
+    margin: 0 auto;
+}
+.nav-bg{
+    background-color: var(--secundario);
+}
+.navegacion-principal{
+    display: flex;
+    justify-content: space-between;
+}
+.navegacion-principal a{
+    color: var(--blanco);
+    padding: 1rem;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.navegacion-principal a:hover{
+    background-color: var(--primario);
+    color: var(--negro);
 }
