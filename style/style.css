@@ -8,14 +8,25 @@
 
     /*custom properties*/
     --fuente-principal: 3.8rem;
+
+    /*Imágenes*/
+    --hero-image: url(../img/hero.jpg);
 }
 
 html{
     font-size: 62.5%;
+    box-sizing: border-box;
 }
+*, *::before, *::after{
+    box-sizing: inherit;
+}
+
 body{
     font-size: 16px; /*1 rem = 10*/
     font-family: "Roboto", sans-serif;
+}
+.hero-size{
+    height: 90vh;
 }
 .titulo{
     text-align: center;
@@ -34,7 +45,8 @@ body{
 }
 .navegacion-principal{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    width: 100%;
 }
 .navegacion-principal a{
     color: var(--blanco);
@@ -47,4 +59,31 @@ body{
 .navegacion-principal a:hover{
     background-color: var(--primario);
     color: var(--negro);
+}
+
+.hero{
+    background-image: var(--hero-image);
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenido-hero{
+    font-size: 4rem;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 480px) {
+    .navegacion-principal{
+        flex-direction: column;
+        text-align: center;
+    }
 }
