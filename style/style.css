@@ -6,9 +6,6 @@
     --secundario: #0097a7;
     --gris: #757575;
 
-    /*custom properties*/
-    --fuente-principal: 3.8rem;
-
     /*Imágenes*/
     --hero-image: url(../img/hero.jpg);
 }
@@ -25,12 +22,29 @@ body{
     font-size: 16px; /*1 rem = 10*/
     font-family: "Roboto", sans-serif;
 }
+h1{
+    font-size: 3.8rem;
+}
+h2{
+    font-size: 2.8rem;
+}
+h3{
+    font-size: 1.8rem;
+}
+p{
+    font-size: 1.3rem;
+}
+
+h1,h2,h3{
+    text-align: center;
+}
+
 .hero-size{
     height: 90vh;
 }
 .titulo{
     text-align: center;
-    font-size: var(--fuente-principal); /* son 38 pixeles*/
+     /* son 38 pixeles*/
     
 }
 .titulo span{
@@ -40,6 +54,23 @@ body{
     width: 120rem;
     margin: 0 auto;
 }
+
+.boton{
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.boton:hover{
+    color: var(--negro);
+    background-color: var(--primario);
+}
+
 .nav-bg{
     background-color: var(--secundario);
 }
@@ -64,26 +95,54 @@ body{
 .hero{
     background-image: var(--hero-image);
     background-repeat: no-repeat;
-    background-size:cover;
-    height: 100%; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-size: 100% 100%;
+    height: 100%;
+    position: relative;
+   
 }
 .contenido-hero{
-    font-size: 4rem;
+    position:absolute;
+    font-size: 2rem;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.500);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.contenido-hero h2,
+.contenido-hero p {
+    color: var(--blanco);
+}
+
+.ubicacion{
+    display: flex;
+    align-items: flex-end;
 }
 
 
 
 
-
-
-
+@media (max-width: 1024px) {
+    .hero-size{
+        height: 87vh;
+    }
+}
 
 @media (max-width: 480px) {
+    .hero-size{
+        height: 65vh;
+    }
     .navegacion-principal{
         flex-direction: column;
         text-align: center;
     }
+    .boton{
+        width: 80%;
+        text-align: center;
+    }
 }
+
