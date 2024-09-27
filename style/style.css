@@ -1,61 +1,78 @@
-:root{
+:root {
     /*Paleta de colores*/
     --blanco: #ffffff;
     --negro: #000000;
     --primario: #ffc107;
     --secundario: #0097a7;
     --gris: #757575;
+    --gris-claro: #dfe9f3;
 
     /*Imágenes*/
     --hero-image: url(../img/hero.jpg);
 }
 
-html{
+html {
     font-size: 62.5%;
     box-sizing: border-box;
+
 }
-*, *::before, *::after{
+
+*,
+*::before,
+*::after {
     box-sizing: inherit;
 }
 
-body{
+body {
     font-size: 16px; /*1 rem = 10*/
     font-family: "Roboto", sans-serif;
+    background: linear-gradient(to top, var(--blanco)  0%, var(--gris-claro) 100%);
+    background-repeat: no-repeat;
 }
-h1{
+
+h1 {
     font-size: 3.8rem;
 }
-h2{
+
+h2 {
     font-size: 2.8rem;
 }
-h3{
+
+h3 {
     font-size: 1.8rem;
 }
-p{
+
+p {
     font-size: 1.3rem;
 }
 
-h1,h2,h3{
+h1,
+h2,
+h3 {
     text-align: center;
 }
 
-.hero-size{
+.hero-size {
     height: 90vh;
 }
-.titulo{
+
+.titulo {
     text-align: center;
-     /* son 38 pixeles*/
     
+
 }
-.titulo span{
-    font-size: 2rem; /* son 20 pixeles*/
+
+.titulo span {
+    font-size: 2rem;
+    /* son 20 pixeles*/
 }
-.contenedor{
+
+.contenedor {
     width: 120rem;
     margin: 0 auto;
 }
 
-.boton{
+.boton {
     background-color: var(--secundario);
     color: var(--blanco);
     padding: 1rem 3rem;
@@ -64,22 +81,26 @@ h1,h2,h3{
     border-radius: 0.5rem;
     text-transform: uppercase;
     font-weight: 700;
+    border: none;
 }
 
-.boton:hover{
+.boton:hover {
     color: var(--negro);
     background-color: var(--primario);
+    cursor: pointer;
 }
 
-.nav-bg{
+.nav-bg {
     background-color: var(--secundario);
 }
-.navegacion-principal{
+
+.navegacion-principal {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
 }
-.navegacion-principal a{
+
+.navegacion-principal a {
     color: var(--blanco);
     padding: 1rem;
     text-decoration: none;
@@ -87,21 +108,32 @@ h1,h2,h3{
     font-weight: 700;
 }
 
-.navegacion-principal a:hover{
+.navegacion-principal a:hover {
     background-color: var(--primario);
     color: var(--negro);
 }
 
-.hero{
+.hero {
     background-image: var(--hero-image);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     height: 100%;
     position: relative;
-   
+
 }
-.contenido-hero{
-    position:absolute;
+
+.sombra{
+    -webkit-box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.42);
+    -moz-box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.42);
+    box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.42);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-top: 2rem;
+    }
+
+.contenido-hero {
+    position: absolute;
     font-size: 2rem;
     width: 100%;
     height: 100%;
@@ -118,31 +150,132 @@ h1,h2,h3{
     color: var(--blanco);
 }
 
-.ubicacion{
+.ubicacion {
     display: flex;
     align-items: flex-end;
 }
 
+.servicios{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1rem;
+}
 
+.servicio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.servicio h3{
+    color: var(--secundario);
+    font-weight: 400;
+}
+
+.servicio p{
+    line-height: 2;
+    text-align: center;
+}
+
+.servicio .iconos{
+    width: 15rem;
+    height: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario{
+    background-color: var(--gris);
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 1rem;
+    padding: 2rem;
+
+}
+
+.formulario fieldset{
+    border: none
+}
+
+.formulario legend{
+    text-align: center;
+    color: var(--primario);
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.contenedor-campos{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: auto auto 20rem;
+    column-gap: 1rem;
+}
+
+.campo{
+    margin-bottom: 1rem;
+}
+
+.campo label{
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+}
+
+.campo textarea{
+    height: 20rem;
+}
+
+.campo:nth-child(3), .campo:nth-child(4){
+    grid-column: 1 / 3;
+}
+
+.imput-text{
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: 1rem;
+}
+
+.enviar{
+    display: flex;
+    justify-content: end;
+    margin-top: 3rem;
+}
+
+.footer{
+    text-align: center;
+    font-weight: bold;
+}
 
 @media (max-width: 1024px) {
-    .hero-size{
+    .hero-size {
         height: 87vh;
     }
 }
 
 @media (max-width: 480px) {
-    .hero-size{
+    .hero-size {
         height: 65vh;
     }
-    .navegacion-principal{
+
+    .navegacion-principal {
         flex-direction: column;
         text-align: center;
     }
-    .boton{
+
+    .boton {
         width: 80%;
         text-align: center;
     }
+    .servicios{
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows: repeat(3, 1fr)
+    }
 }
-
